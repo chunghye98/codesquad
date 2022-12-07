@@ -57,6 +57,7 @@ public class Calculation_Test3 {
         int month = inputToInteger(sc.next());
         int date = inputToInteger(sc.next());
 
+        int day = calculateNumberOfDays(year, month, date);
 
     }
 
@@ -69,6 +70,15 @@ public class Calculation_Test3 {
             }
         }
         return Integer.parseInt(sb.toString());
+    }
+
+    private int calculateNumberOfDays(int year, int month, int date) {
+        int day = (year - 1) * 365;
+        for (int i = 0; i < month; i++) {
+            day += months[i];
+        }
+        day = day + date - 1;
+        return day;
     }
 
 }
