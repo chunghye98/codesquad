@@ -79,6 +79,12 @@ public class Planet_Test3 {
     }
 
 
+    private int calculateDay(int day, double round) {
+        double ratio = round / (double) dates;
+        day = (int) ((ratio * day) % round);
+        return day;
+    }
+
     private Point revolve(int day, int radius, int y, int x) {
 
         for (int i = 1; i <= day; i++) {
