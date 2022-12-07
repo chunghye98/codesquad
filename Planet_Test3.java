@@ -78,6 +78,18 @@ public class Planet_Test3 {
         solarSystem[y][x] = planet;
     }
 
+    public Point movePlanet(int day, int solarXY) {
+        double[] radiusAndRound = getRadiusAndRoundByName();
+        int radius = (int) radiusAndRound[0];
+        double round = radiusAndRound[1];
+
+        int y = solarXY;
+        int x = solarXY + radius;
+        day = calculateDay(day, round);
+        Point p = revolve(day, radius, y, x);
+        return p;
+    }
+
     public double[] getRadiusAndRoundByName() {
         double[] radiusAndRound = new double[2];
         if (name.equals(StarEnum.MERCURY.getName())) {

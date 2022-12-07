@@ -58,7 +58,7 @@ public class Calculation_Test3 {
         int date = inputToInteger(sc.next());
 
         int day = calculateNumberOfDays(year, month, date);
-
+        movePlanet(day);
     }
 
     private int inputToInteger(String strInput) {
@@ -79,6 +79,22 @@ public class Calculation_Test3 {
         }
         day = day + date - 1;
         return day;
+    }
+
+    private void movePlanet(int day) {
+        mercury.movePlanet(day, solarXY);
+        venus.movePlanet(day, solarXY);
+        move(earth, moon, day, solarXY);
+        move(mars, phobos, day, solarXY);
+        move(jupiter, europa, day, solarXY);
+        move(saturn, titan, day, solarXY);
+        move(uranus, miranda, day, solarXY);
+        move(neptune, triton, day, solarXY);
+    }
+
+    private void move(Planet_Test3 planet, Planet_Test3 satellite, int day, int solarXY) {
+        Point p = planet.movePlanet(day, solarXY);
+        satellite.moveSatellite(day, p);
     }
 
 }
