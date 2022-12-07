@@ -47,5 +47,35 @@ public class Planet_Test3 {
         return solarXY;
     }
 
+    // 태양계 보여주기
+    public void showSolarSystem() {
+        for (int i = 0; i < solarSystem.length; i++) {
+            for (int j = 0; j < solarSystem[i].length; j++) {
+                if (solarSystem[i][j] == null) {
+                    solarSystem[i][j] = BLANK;
+                }
+            }
+        }
+
+        for (String[] arr : solarSystem) {
+            for (String s : arr) {
+                System.out.print(s);
+            }
+            System.out.println();
+        }
+    }
+
+    private void addPlanetToSolarSystem(int y, int x) {
+        if (name.equals(StarEnum.EARTH.getName())) {
+            solarSystem[y-3][x-2] = CURRENT_LOCATION_MESSAGE_H;
+            solarSystem[y-3][x-1] = CURRENT_LOCATION_MESSAGE_E;
+            solarSystem[y-3][x] = CURRENT_LOCATION_MESSAGE_R;
+            solarSystem[y-3][x+1] = CURRENT_LOCATION_MESSAGE_E;
+            solarSystem[y-3][x+2] = CURRENT_LOCATION_MESSAGE;
+            solarSystem[y-2][x] = CURRENT_LOCATION_ARROW1;
+            solarSystem[y-1][x] = CURRENT_LOCATION_ARROW2;
+        }
+        solarSystem[y][x] = planet;
+    }
 
 }
