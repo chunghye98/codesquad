@@ -78,4 +78,28 @@ public class Planet_Test3 {
         solarSystem[y][x] = planet;
     }
 
+
+    private Point revolve(int day, int radius, int y, int x) {
+
+        for (int i = 1; i <= day; i++) {
+            if (i > 1 && i <= radius + 1) {
+                y++;
+                x--;
+            }
+            if (i > radius + 1 && i <= radius * 2 + 1) {
+                y--;
+                x--;
+            }
+            if (i > radius * 2 + 1 && i <= radius * 3 + 1) {
+                y--;
+                x++;
+            }
+            if (i > radius * 3 + 1 && i <= radius * 4) {
+                y++;
+                x++;
+            }
+        }
+        addPlanetToSolarSystem(y, x);
+        return new Point(x, y);
+    }
 }
