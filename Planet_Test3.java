@@ -78,6 +78,28 @@ public class Planet_Test3 {
         solarSystem[y][x] = planet;
     }
 
+    public double[] getRadiusAndRoundByName() {
+        double[] radiusAndRound = new double[2];
+        if (name.equals(StarEnum.MERCURY.getName())) {
+            radiusAndRound = getRadiusAndRound(StarEnum.MERCURY);
+        } else if (name.equals(StarEnum.VENUS.getName())) {
+            radiusAndRound = getRadiusAndRound(StarEnum.VENUS);
+        } else if (name.equals(StarEnum.EARTH.getName())) {
+            radiusAndRound = getRadiusAndRound(StarEnum.EARTH);
+        } else if (name.equals(StarEnum.MARS.getName())) {
+            radiusAndRound = getRadiusAndRound(StarEnum.MARS);
+        } else if (name.equals(StarEnum.JUPITER.getName())) {
+            radiusAndRound = getRadiusAndRound(StarEnum.JUPITER);
+        } else if (name.equals(StarEnum.SATURN.getName())) {
+            radiusAndRound = getRadiusAndRound(StarEnum.SATURN);
+        } else if (name.equals(StarEnum.URANUS.getName())) {
+            radiusAndRound = getRadiusAndRound(StarEnum.URANUS);
+        } else if (name.equals(StarEnum.NEPTUNE.getName())) {
+            radiusAndRound = getRadiusAndRound(StarEnum.NEPTUNE);
+        }
+        return radiusAndRound;
+    }
+
     private double[] getRadiusAndRound(StarEnum star) {
         double[] radiusAndRound = {star.getRadius(), star.getRound()};
         return radiusAndRound;
