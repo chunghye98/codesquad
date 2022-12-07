@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.util.Scanner;
 
-public class Calculation {
+public class Calculation_Test2 {
 
     private final int ZERO = 48;
     private final int NINE = 57;
@@ -11,26 +11,15 @@ public class Calculation {
 
     private StringBuilder sb;
 
-    private Planet solar;
-    private Planet earth;
-    private Planet moon;
+    private Planet_Test2 solar;
+    private Planet_Test2 earth;
+    private Planet_Test2 moon;
 
-    public Calculation() {
-        solar = new Planet(5);
+    public Calculation_Test2() {
+        solar = new Planet_Test2(5);
         solarXY = solar.addSolarToSolarSystem();
-        earth = new Planet(3);
-        moon = new Planet(1);
-    }
-
-    private int inputToInteger(String strInput) {
-        char[] temp = strInput.toCharArray();
-        sb = new StringBuilder();
-        for (int i = 0; i < temp.length; i++) {
-            if (temp[i] >= ZERO && temp[i] <= NINE) {
-                sb.append(temp[i]);
-            }
-        }
-        return Integer.parseInt(sb.toString());
+        earth = new Planet_Test2(3);
+        moon = new Planet_Test2(1);
     }
 
     public void run() {
@@ -45,6 +34,17 @@ public class Calculation {
         movePlanet(day);
 
         solar.showSolarSystem();
+    }
+
+    private int inputToInteger(String strInput) {
+        char[] temp = strInput.toCharArray();
+        sb = new StringBuilder();
+        for (int i = 0; i < temp.length; i++) {
+            if (temp[i] >= ZERO && temp[i] <= NINE) {
+                sb.append(temp[i]);
+            }
+        }
+        return Integer.parseInt(sb.toString());
     }
 
     private void movePlanet(int day) {

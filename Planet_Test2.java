@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Planet {
+public class Planet_Test2 {
     private final String STAR = "*";
     private final String BLANK = " ";
     private final int SOLAR_RANGE = 2;
@@ -25,7 +25,7 @@ public class Planet {
     private int size;
     private int solarSystemRange;
 
-    public Planet(int size) {
+    public Planet_Test2(int size) {
         this.size = size;
         this.planet = new String[size][size];
         this.solarSystemRange = EARTH_MOVE_DIAMETER + MOON_MOVE_DIAMETER;
