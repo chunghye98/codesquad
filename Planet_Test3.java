@@ -78,6 +78,21 @@ public class Planet_Test3 {
         solarSystem[y][x] = planet;
     }
 
+    private double[] getRadiusAndRound(StarEnum star) {
+        double[] radiusAndRound = {star.getRadius(), star.getRound()};
+        return radiusAndRound;
+    }
+
+    public void moveSatellite(int day, Point p) {
+        int radius = SATELLITE_SIZE;
+        double round = radius * 4;
+
+        int y = p.y;
+        int x = p.x + radius;
+        day = calculateDay(day, round);
+
+        revolve(day, radius, y, x);
+    }
 
     private int calculateDay(int day, double round) {
         double ratio = round / (double) dates;
