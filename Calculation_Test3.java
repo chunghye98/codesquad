@@ -99,5 +99,4 @@ public class Calculation_Test3 {
         Point p = planet.movePlanet(day, solarXY);
         satellite.moveSatellite(day, p);
     }
-
 }

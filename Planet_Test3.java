@@ -135,7 +135,6 @@ public class Planet_Test3 {
     }
 
     private Point revolve(int day, int radius, int y, int x) {
-
         for (int i = 1; i <= day; i++) {
             if (i > 1 && i <= radius + 1) {
                 y++;
