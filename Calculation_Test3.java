@@ -58,7 +58,10 @@ public class Calculation_Test3 {
         int date = inputToInteger(sc.next());
 
         int day = calculateNumberOfDays(year, month, date);
+
         movePlanet(day);
+
+        solar.showSolarSystem();
     }
 
     private int inputToInteger(String strInput) {
