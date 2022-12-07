@@ -50,8 +50,25 @@ public class Calculation_Test3 {
     }
 
     public void run() {
+        System.out.println(INPUT_MESSAGE);
+        Scanner sc = new Scanner(System.in);
+
+        int year = inputToInteger(sc.next());
+        int month = inputToInteger(sc.next());
+        int date = inputToInteger(sc.next());
+
 
     }
 
+    private int inputToInteger(String strInput) {
+        char[] temp = strInput.toCharArray();
+        sb = new StringBuilder();
+        for (int i = 0; i < temp.length; i++) {
+            if (temp[i] >= ZERO && temp[i] <= NINE) {
+                sb.append(temp[i]);
+            }
+        }
+        return Integer.parseInt(sb.toString());
+    }
 
 }
